@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+using namespace std;
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
@@ -51,7 +52,7 @@ public:
         }
         return s.end();
     }
-    oset<T>::iterator upper_bound(T x) {
+    omset<T>::iterator upper_bound(T x) {
         int l = s.order_of_key(x + 1);
         if(l + 1 <= ssize(s)) {
             return s.find_by_order(l);
