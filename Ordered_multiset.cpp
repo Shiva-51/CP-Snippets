@@ -23,7 +23,7 @@ public:
     void insert(T a) {
         s.insert(a);
     }
-    const T &operator[](int n) {
+    const T operator[](int n) {
         return *s.find_by_order(n);
     }
     int less(T x) {
@@ -32,8 +32,9 @@ public:
     bool erase(T x) {
         int l = s.order_of_key(x);
         if(l + 1 <= ssize(s)) {
-            if(*s.find_by_order(l) == x) {
-                s.erase(s.find_by_order(l));
+            auto it = s.find_by_order(l);
+            if(*it == x) {
+                s.erase(it);
                 return true;
             }
         }
