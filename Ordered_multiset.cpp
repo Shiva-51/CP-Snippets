@@ -26,6 +26,9 @@ public:
     const T &operator[](int n) {
         return *s.find_by_order(n);
     }
+    int less(T x) {
+        return s.order_of_key(x);
+    }
     bool erase(T x) {
         int l = s.order_of_key(x);
         if(l + 1 <= ssize(s)) {
