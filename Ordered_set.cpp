@@ -12,7 +12,7 @@ tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update
 template<class T>
 class ordered_set {
 public:
-    oset<int> s;
+    oset<T> s;
     int size() {
         return ssize(s);
     }
